@@ -1,0 +1,19 @@
+.succeedIndicator {
+  color: rgb(35, 153, 19);
+  background: lightgray;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5x;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: rgb(204, 29, 16);
+  background: lightgray;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5x;
+  padding: 10px;
+  margin-bottom: 10px;
+}
