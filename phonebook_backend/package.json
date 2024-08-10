@@ -6,12 +6,17 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "author": "nice-Code-90",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
     "@flydotio/dockerfile": "^0.5.8",
+    "@stylistic/eslint-plugin-js": "^2.6.2",
+    "eslint": "^9.9.0",
+    "globals": "^15.9.0",
     "nodemon": "^3.1.4"
   },
   "dependencies": {

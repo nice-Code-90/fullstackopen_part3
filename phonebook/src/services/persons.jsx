@@ -1,5 +1,6 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3001/api/persons";
+//const baseUrl = "http://localhost:3001/api/persons";
+const baseUrl = "/api/persons";
 
 const getAll = () => {
   const request = axios.get(baseUrl);
@@ -13,14 +14,7 @@ const create = (newObject) => {
 
 const update = (newObject, id) => {
   const request = axios.put(`${baseUrl}/${id}`, newObject);
-  return request
-    .then((response) => response.data)
-    .catch((error) => {
-      throw new Error(
-        `Information of ${newObject.name} has already been removed from server`,
-        error
-      );
-    });
+  return request.then((response) => response.data);
 };
 const deletePerson = (id) => {
   const request = axios.delete(`${baseUrl}/${id}`);

@@ -51,11 +51,13 @@ const App = () => {
             }, 5000);
           })
           .catch((error) => {
-            setErrorNotification(`${error.message}`);
-            setPersons(persons.filter((person) => person.id !== id));
+            let errorMessage = error.response.data.error;
+
+            setErrorNotification(errorMessage);
             setTimeout(() => {
               setErrorNotification(null);
             }, 5000);
+            console.error("failed: ", error);
           });
       }
     } else {
@@ -69,6 +71,12 @@ const App = () => {
           }, 5000);
         })
         .catch((error) => {
+          let errorMessage = error.response.data.error;
+
+          setErrorNotification(errorMessage);
+          setTimeout(() => {
+            setErrorNotification(null);
+          }, 5000);
           console.error("Failed to create person", error);
         });
     }
@@ -82,6 +90,10 @@ const App = () => {
         .deletePerson(id)
         .then(() => {
           setPersons(persons.filter((person) => person.id !== id));
+          setErrorNotification(`Deleted: ${name}`);
+          setTimeout(() => {
+            setErrorNotification(null);
+          }, 5000);
         })
         .catch((error) => {
           console.error("Failed to delete person", error);
